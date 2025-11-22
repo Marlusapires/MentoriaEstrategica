@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mentoria Estratégica de Negócios – Marlusa M. Pires</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mentoria estratégica de negócios com Marlusa M. Pires para empresários que querem crescer com gestão, rentabilidade e governança.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-alt: #020617;
+      --section: #020617;
+      --card: #020617;
+      --primary: #e11d48;
+      --primary-soft: rgba(225, 29, 72, 0.12);
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #1e293b;
+      --radius-lg: 1.5rem;
+      --radius-sm: 999px;
+      --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.9);
+      --container: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 42%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.8), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .nav {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .brand__logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 0 0, #fb7185, #e11d48 40%, #0ea5e9 110%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(248, 113, 113, 0.5);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .brand__text-main {
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand__text-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav__links a {
+      color: var(--muted);
+      padding: 0.3rem 0.1rem;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav__links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+
+    .nav__links a:hover {
+      color: var(--text);
+    }
+
+    .nav__links a:hover::after {
+      width: 100%;
+    }
+
+    .nav__cta {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 1.4rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: none;
+      color: inherit;
+    }
+
+    .btn--ghost {
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .btn--ghost:hover {
+      background: rgba(30, 64, 175, 0.6);
+      border-color: rgba(56, 189, 248, 0.9);
+      color: #e0f2fe;
+    }
+
+    .btn--primary {
+      background: linear-gradient(135deg, #e11d48, #f97316);
+      color: white;
+      box-shadow: 0 14px 35px rgba(248, 113, 113, 0.5);
+    }
+
+    .btn--primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 50px rgba(248, 113, 113, 0.7);
+      filter: brightness(1.05);
+    }
+
+    .btn--sm {
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+    }
+
+    .nav__mobile-toggle {
+      display: none;
+      border: none;
+      background: none;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .nav__mobile-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      margin: 4px 0;
+      background: var(--text);
+      border-radius: 999px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.1fr);
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+      font-size: 0.72rem;
+      margin-bottom: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .hero__eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #f97316, #e11d48);
+      box-shadow: 0 0 12px rgba(248, 113, 113, 0.8);
+    }
+
+    .hero__title {
+      font-size: clamp(2.2rem, 3vw + 1rem, 3.1rem);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.035em;
+    }
+
+    .hero__title span {
+      background: linear-gradient(120deg, #f97316, #e11d48, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero__subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero__proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.86rem;
+    }
+
+    .hero__pill {
+      border-radius: 999px;
+      padding: 0.36rem 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--muted);
+    }
+
+    .hero__pill strong {
+      color: #e5e7eb;
+    }
+
+    .hero__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero__note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero__metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin-top: 1.6rem;
+      font-size: 0.8rem;
+    }
+
+    .hero__metric {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .hero__metric-number {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .hero__metric-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .hero__right {
+      position: relative;
+    }
+
+    .hero__card {
+      background: radial-gradient(circle at top left, #1f2937 0, #020617 50%);
+      padding: 1.6rem 1.7rem 1.4rem;
+      border-radius: 1.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__bg-glow {
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(248, 113, 113, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.18), transparent 52%);
+      opacity: 0.9;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .hero__profile {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1.1rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__avatar-wrap {
+      width: 92px;
+      height: 92px;
+      border-radius: 26px;
+      padding: 3px;
+      background: linear-gradient(145deg, rgba(248, 113, 113, 0.75), rgba(56, 189, 248, 0.85));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__avatar-inner {
+      border-radius: 22px;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background: #0f172a;
+    }
+
+    .hero__avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .hero__badge {
+      position: absolute;
+      bottom: -6px;
+      right: -2px;
+      padding: 0.25rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(248, 250, 252, 0.5);
+      font-size: 0.65rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero__badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.25);
+    }
+
+    .hero__name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero__role {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero__bullets {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .hero__bullets li::before {
+      content: "• ";
+      color: var(--primary);
+    }
+
+    .hero__tagline {
+      margin-top: 1.1rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.86rem;
+      color: #e2e8f0;
+    }
+
+    .hero__slots {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.78rem;
+    }
+
+    .hero__chip {
+      padding: 0.28rem 0.8rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      border: 1px solid rgba(248, 113, 113, 0.5);
+      color: #fecaca;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .hero__chip span {
+      display: inline-flex;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #f97316;
+    }
+
+    .hero__mini-form {
+      margin-top: 1rem;
+      border-radius: 1.3rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      padding: 0.9rem 1rem;
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+    }
+
+    .hero__mini-form label {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero__mini-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .hero__mini-inputs {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0.6rem;
+    }
+
+    .input {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(30, 64, 175, 0.6);
+      background: rgba(15, 23, 42, 0.98);
+      color: #e5e7eb;
+      font-size: 0.78rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .input::placeholder {
+      color: #64748b;
+    }
+
+    .input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.7);
+      background: #020617;
+    }
+
+    .hero__mini-submit {
+      justify-content: center;
+      width: 100%;
+      margin-top: 0.25rem;
+    }
+
+    .hero__mini-footnote {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .section__inner {
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.22rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 0.9rem;
+    }
+
+    .section__title {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section__subtitle {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* WHAT & HOW */
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.6rem 1.7rem;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card--soft {
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.08), rgba(15, 23, 42, 0.98));
+    }
+
+    .card__title {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card__subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      font-size: 0.9rem;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 0.55rem;
+      align-items: flex-start;
+    }
+
+    .check-list span.icon {
+      margin-top: 0.2rem;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.18);
+      border: 1px solid rgba(34, 197, 94, 0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #4ade80;
+      flex-shrink: 0;
+    }
+
+    .tag-row {
+      margin-top: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.76rem;
+    }
+
+    .tag {
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+    }
+
+    /* WHO */
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .pill-cols {
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+    }
+
+    .pill-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.65rem 0.8rem;
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #38bdf8;
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
+      flex-shrink: 0;
+    }
+
+    .benefits-grid {
+      margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      font-size: 0.82rem;
+    }
+
+    .benefit {
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.7rem 0.75rem;
+      display: grid;
+      gap: 0.15rem;
+    }
+
+    .benefit strong {
+      font-size: 0.86rem;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .testimonial-card {
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.38);
+      padding: 1.3rem 1.3rem 1.15rem;
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.86rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      top: -1.2rem;
+      right: 1.4rem;
+      font-size: 5rem;
+      color: rgba(148, 163, 184, 0.18);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .testimonial-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+    }
+
+    .testimonial-name {
+      font-weight: 500;
+    }
+
+    .testimonial-role {
+      color: var(--muted);
+    }
+
+    .testimonial-badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.6);
+      color: #bbf7d0;
+      font-size: 0.7rem;
+      background: rgba(22, 101, 52, 0.4);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      font-size: 0.86rem;
+    }
+
+    .stat {
+      border-radius: 1rem;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+      display: grid;
+      gap: 0.2rem;
+      min-width: 150px;
+    }
+
+    .stat strong {
+      font-size: 1rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* OFFER */
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.05fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+      font-size: 0.86rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      gap: 0.15rem;
+      padding: 0.6rem 0.7rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .timeline-item strong {
+      font-size: 0.9rem;
+    }
+
+    .offer-highlights {
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    .offer-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.7rem;
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .offer-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* FORM / CTA FINAL */
+
+    .cta-section {
+      padding-bottom: 4.5rem;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.05fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .cta-highlight {
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.7rem;
+      background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.16), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(248, 113, 113, 0.6);
+      box-shadow: 0 18px 45px rgba(248, 113, 113, 0.4);
+    }
+
+    .cta-highlight p {
+      color: #fee2e2;
+      font-size: 0.96rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .cta-highlight ul {
+      font-size: 0.9rem;
+      padding-left: 1.1rem;
+      color: #fecaca;
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .form-card {
+      border-radius: var(--radius-lg);
+      padding: 1.7rem 1.7rem 1.5rem;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 18px 55px rgba(15, 23, 42, 0.95);
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.8rem;
+    }
+
+    .form-group label {
+      color: var(--muted);
+    }
+
+    textarea.input {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-footnote {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      background: #020617;
+      padding: 1.8rem 1.5rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .footer-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-contact {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-contact a {
+      color: var(--muted);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      z-index: 50;
+    }
+
+    .whatsapp-float a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 16px 30px rgba(22, 163, 74, 0.7);
+      color: #ecfdf5;
+      font-size: 1.6rem;
+    }
+
+    .whatsapp-float a:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .nav__links,
+      .nav__cta {
+        display: none;
+      }
+
+      .nav__mobile-toggle {
+        display: block;
+      }
+
+      .nav--open .nav__links,
+      .nav--open .nav__cta {
+        display: flex;
+      }
+
+      .nav--open {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
+      .nav--open .nav__links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(51, 65, 85, 0.8);
+      }
+
+      .nav--open .nav__cta {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 3.2rem;
+      }
+
+      .hero__right {
+        order: -1;
+      }
+
+      .grid-2,
+      .who-grid,
+      .testimonials-grid,
+      .about-grid,
+      .offer-grid,
+      .cta-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cta-section {
+        padding-bottom: 3.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding-inline: 1.2rem;
+      }
+
+      .hero {
+        padding-inline: 1.2rem;
+      }
+
+      .hero__mini-inputs {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero__card {
+        padding: 1.3rem 1.35rem;
+      }
+
+      .cta-highlight,
+      .form-card {
+        padding: 1.4rem 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav" id="topNav">
+      <div class="nav__brand">
+        <div class="brand__logo">MP</div>
+        <div>
+          <div class="brand__text-main">Marlusa M. Pires</div>
+          <div class="brand__text-sub">Mentoria Estratégica de Negócios</div>
+        </div>
+      </div>
+
+      <div class="nav__links">
+        <a href="#o-que">O que você recebe</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#para-quem">Para quem é</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#sobre">Sobre</a>
+      </div>
+
+      <div class="nav__cta">
+        <button class="btn btn--ghost btn--sm" onclick="scrollToSection('contato')">Ver disponibilidade</button>
+        <button class="btn btn--primary btn--sm" onclick="scrollToSection('contato')">
+          Agendar conversa
+        </button>
+      </div>
+
+      <button class="nav__mobile-toggle" aria-label="Abrir menu" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Mentoria 1:1 para empresários
+        </div>
+        <h1 class="hero__title">
+          Transforme sua empresa em um <span>negócio preparado para crescer e durar</span>.
+        </h1>
+        <p class="hero__subtitle">
+          Mentoria estratégica de negócios para empresários que querem sair do operacional,
+          ganhar clareza nos números, organizar a gestão e construir resultados consistentes
+          – sem perder o controle do caixa.
+        </p>
+
+        <div class="hero__proof">
+          <div class="hero__pill"><strong>30+ anos</strong> em gestão empresarial</div>
+          <div class="hero__pill"><strong>22 anos</strong> como CFO em grupo de grande porte</div>
+          <div class="hero__pill"><strong>20 anos</strong> estruturando times e processos</div>
+        </div>
+
+        <div class="hero__cta">
+          <button class="btn btn--primary" onclick="scrollToSection('contato')">
+            Quero mentoria com a Marlusa
+          </button>
+          <button class="btn btn--ghost" onclick="scrollToSection('como-funciona')">
+            Ver como funciona
+          </button>
+        </div>
+
+        <p class="hero__note">
+          Mentoria exclusiva, vagas limitadas por semestre para garantir acompanhamento de perto.
+        </p>
+
+        <div class="hero__metrics">
+          <div class="hero__metric">
+            <span class="hero__metric-number">+R$ 100 mi</span>
+            <span class="hero__metric-label">em faturamento anual sob gestão</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-number">Gestão &amp; Governança</span>
+            <span class="hero__metric-label">foco em resultados, pessoas e sucessão</span>
+          </div>
+          <div class="hero__metric">
+            <span class="hero__metric-number">Mentoria prática</span>
+            <span class="hero__metric-label">orientada por indicadores, não por achismo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__card">
+          <div class="hero__bg-glow"></div>
+
+          <div class="hero__profile">
+            <div class="hero__avatar-wrap">
+              <div class="hero__avatar-inner">
+                <!-- TROCAR ESTE SRC PELA SUA IMAGEM, EX: ./img/marlusa.png -->
+                <img src="/mnt/data/513cd60c-64ad-4b94-af9b-73f5a1924e5d.png" alt="Foto de Marlusa M. Pires">
+              </div>
+              <div class="hero__badge">
+                <span class="hero__badge-dot"></span>
+                Mentorias ativas
+              </div>
+            </div>
+            <div>
+              <div class="hero__name">Marlusa M. Pires</div>
+              <div class="hero__role">Mentora Estratégica • Conselheira Consultiva</div>
+              <ul class="hero__bullets">
+                <li>Graduada em Gestão e Marketing de Pequenas e Médias Empresas.</li>
+                <li>MBA em Gestão Comercial.</li>
+                <li>Pós-graduações em Gestão de Pessoas, Liderança &amp; Coaching, Gestão Hospitalar e Marketing Digital.</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="hero__tagline">
+            Vamos destravar o crescimento da sua empresa organizando estratégia, indicadores e rotina de
+            gestão – com um plano que cabe na sua realidade.
+          </p>
+
+          <div class="hero__slots">
+            <span class="hero__chip">
+              <span></span> Próxima turma de mentorados: poucas vagas
+            </span>
+            <span style="font-size:0.78rem;color:var(--muted);">
+              Atendimentos online para todo o Brasil.
+            </span>
+          </div>
+
+          <div class="hero__mini-form">
+            <div class="hero__mini-row">
+              <label for="mini-email">Deixe seu contato para receber a proposta da mentoria:</label>
+              <div class="hero__mini-inputs">
+                <input class="input" type="email" id="mini-email" placeholder="Seu melhor e-mail">
+                <input class="input" type="text" id="mini-whats" placeholder="WhatsApp com DDD">
+              </div>
+            </div>
+            <button class="btn btn--primary hero__mini-submit" onclick="scrollToSection('contato')">
+              Quero receber a proposta detalhada
+            </button>
+            <p class="hero__mini-footnote">
+              Sem spam. Você receberá apenas informações sobre a mentoria e materiais de gestão.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT / HOW -->
+    <section id="o-que">
+      <div class="section__inner">
+        <div class="section__badge">
+          O que você recebe
+        </div>
+        <h2 class="section__title">Mentoria estratégica para colocar sua empresa no eixo.</h2>
+        <p class="section__subtitle">
+          A mentoria combina visão de conselho, experiência de CFO e prática de quem vive gestão
+          no dia a dia. Nada de frases de efeito: vamos trabalhar em cima dos seus números,
+          processos e decisões reais.
+        </p>
+
+        <div class="grid-2">
+          <div class="card card--soft">
+            <h3 class="card__title">O que vamos construir juntos</h3>
+            <p class="card__subtitle">
+              Em encontros individuais, online, com foco total no seu negócio.
+            </p>
+            <ul class="check-list">
+              <li>
+                <span class="icon">✓</span>
+                <span>Diagnóstico estratégico da empresa: finanças, operações, pessoas e riscos.</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>Organização dos indicadores-chave (faturamento, margem, inadimplência, caixa, endividamento).</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>Agenda de gestão: o que olhar semanal, mensal e trimestralmente para não perder o controle.</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>Plano de ação com prioridades claras, responsáveis e prazos.</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>Rotina de acompanhamento com ajustes finos a cada sessão.</span>
+              </li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Estratégia</span>
+              <span class="tag">Caixa &amp; Resultado</span>
+              <span class="tag">Pessoas &amp; Processos</span>
+              <span class="tag">Governança</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title" id="como-funciona">Como funciona na prática</h3>
+            <p class="card__subtitle">
+              Modelo enxuto, direto ao ponto e adaptado ao estágio da sua empresa.
+            </p>
+            <ul class="check-list">
+              <li>
+                <span class="icon">1</span>
+                <span><strong>Reunião de alinhamento (gratuita):</strong> entendemos o momento da empresa
+                  e avaliamos se a mentoria faz sentido para você.</span>
+              </li>
+              <li>
+                <span class="icon">2</span>
+                <span><strong>Mentoria 1:1 quinzenal:</strong> encontros online de 60 a 90 minutos, com
+                  pauta definida e registro de decisões.</span>
+              </li>
+              <li>
+                <span class="icon">3</span>
+                <span><strong>Suporte entre sessões:</strong> envio de dúvidas pontuais por e-mail ou WhatsApp
+                  (horário comercial).</span>
+              </li>
+              <li>
+                <span class="icon">4</span>
+                <span><strong>Materiais de apoio:</strong> checklists, planilhas, modelos de relatório e
+                  roteiros de reunião de gestão.</span>
+              </li>
+              <li>
+                <span class="icon">5</span>
+                <span><strong>Avaliação de resultados:</strong> revisão de indicadores e próximos passos ao
+                  final do ciclo de mentoria.</span>
+              </li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Encontros online</span>
+              <span class="tag">Acompanhamento contínuo</span>
+              <span class="tag">Materiais aplicáveis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO / BENEFITS -->
+    <section id="para-quem">
+      <div class="section__inner">
+        <div class="section__badge">
+          Para quem é
+        </div>
+        <h2 class="section__title">Empresários que querem gestão de verdade, não só faturamento.</h2>
+        <p class="section__subtitle">
+          A mentoria é ideal para donos de negócios que já têm operação em andamento, faturam,
+          mas sentem que a empresa ainda depende demais da sua presença para tudo funcionar.
+        </p>
+
+        <div class="who-grid">
+          <div>
+            <div class="pill-cols">
+              <div class="pill-row">
+                <span class="pill-dot"></span>
+                <span>Sua empresa fatura, mas você sente que o lucro não acompanha.</span>
+              </div>
+              <div class="pill-row">
+                <span class="pill-dot"></span>
+                <span>Você quer tomar decisões olhando números confiáveis, não só “sensação”.</span>
+              </div>
+              <div class="pill-row">
+                <span class="pill-dot"></span>
+                <span>Você está cansado de viver apagando incêndio e quer uma rotina de gestão estruturada.</span>
+              </div>
+              <div class="pill-row">
+                <span class="pill-dot"></span>
+                <span>Você pensa em sucessão, governança e legado – não apenas no resultado do mês.</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:0.6rem;">O que muda na sua rotina como gestor</h3>
+            <div class="benefits-grid">
+              <div class="benefit">
+                <strong>Clareza financeira</strong>
+                <span>Você entende onde o dinheiro entra, onde sai e qual a real saúde do caixa.</span>
+              </div>
+              <div class="benefit">
+                <strong>Metas factíveis</strong>
+                <span>Indicadores que fazem sentido para o seu negócio, com metas alcançáveis.</span>
+              </div>
+              <div class="benefit">
+                <strong>Time alinhado</strong>
+                <span>Agenda de gestão para envolver líderes na execução e acompanhar resultados.</span>
+              </div>
+              <div class="benefit">
+                <strong>Menos urgência</strong>
+                <span>Você deixa de ser o “bombeiro” da empresa e passa a atuar como estrategista.</span>
+              </div>
+              <div class="benefit">
+                <strong>Visão de futuro</strong>
+                <span>Decisões alinhadas com crescimento, riscos e continuidade do negócio.</span>
+              </div>
+              <div class="benefit">
+                <strong>Autonomia</strong>
+                <span>A empresa caminha com processos claros, mesmo quando você não está.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="depoimentos">
+      <div class="section__inner">
+        <div class="section__badge">
+          Prova social
+        </div>
+        <h2 class="section__title">O que empresários dizem ao organizar a gestão com mentoria.</h2>
+        <p class="section__subtitle">
+          Depoimentos ilustrativos de perfis de empresas que se beneficiam deste tipo de acompanhamento.
+          Substitua pelos feedbacks reais dos seus mentorados.
+        </p>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <p>
+              “Eu achava que tinha problema de vendas. Depois da mentoria ficou claro que o gargalo
+              era gestão de caixa e concessão de crédito. Hoje acompanho os números toda semana
+              e tomo decisões com muito mais segurança.”
+            </p>
+            <div class="testimonial-meta">
+              <div>
+                <div class="testimonial-name">Empresário do varejo automotivo</div>
+                <div class="testimonial-role">Empresa familiar • 3 unidades</div>
+              </div>
+              <span class="testimonial-badge">Evolução em 3 meses</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p>
+              “Ter alguém de fora, com visão de diretoria e conselho, ajudou a tirar projetos da gaveta.
+              Organizamos o comitê de gestão, definimos indicadores e hoje as reuniões são objetivas,
+              com decisões claras.”
+            </p>
+            <div class="testimonial-meta">
+              <div>
+                <div class="testimonial-name">Sócio-diretor de serviços</div>
+                <div class="testimonial-role">B2B • prestação de serviços técnicos</div>
+              </div>
+              <span class="testimonial-badge">Gestão mais leve</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p>
+              “Eu tinha receio de expor os números. A abordagem da Marlusa é respeitosa, mas firme.
+              Hoje eu sei exatamente o que olhar, quando olhar e quais perguntas fazer para meus gestores.”
+            </p>
+            <div class="testimonial-meta">
+              <div>
+                <div class="testimonial-name">Fundador de pequena indústria</div>
+                <div class="testimonial-role">Indústria • expansão nacional</div>
+              </div>
+              <span class="testimonial-badge">Decisões com dados</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="sobre">
+      <div class="section__inner">
+        <div class="section__badge">
+          Quem é a mentora
+        </div>
+        <div class="about-grid">
+          <div>
+            <h2 class="section__title">Experiência de campo aplicada ao seu negócio.</h2>
+            <p class="section__subtitle">
+              Sou Marlusa M. Pires, executiva de finanças e gestão com mais de três décadas em cargos de
+              liderança empresarial. Atuei como CFO de grupo empresarial de grande porte por 22 anos,
+              com forte foco em governança, estratégia, risco e pessoas.
+            </p>
+            <p class="section__subtitle">
+              Minha mentoria é prática, direta e respeita a cultura da empresa. Vamos trabalhar juntos
+              para que você tenha visão de dono com mentalidade de conselho.
+            </p>
+
+            <div class="stats-row">
+              <div class="stat">
+                <strong>30+ anos</strong>
+                <span>em cargos de gestão empresarial</span>
+              </div>
+              <div class="stat">
+                <strong>22 anos</strong>
+                <span>como CFO de grupo empresarial</span>
+              </div>
+              <div class="stat">
+                <strong>20 anos</strong>
+                <span>na gestão e desenvolvimento de pessoas</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <h3 class="card__title">Formação e atuações</h3>
+              <ul class="check-list" style="margin-bottom:0.9rem;">
+                <li><span class="icon">✓</span><span>Graduada em Gestão e Marketing de Pequenas e Médias Empresas.</span></li>
+                <li><span class="icon">✓</span><span>Pós-graduada em Gestão de Pessoas.</span></li>
+                <li><span class="icon">✓</span><span>Pós-graduada em Liderança e Coaching.</span></li>
+                <li><span class="icon">✓</span><span>MBA em Gestão Comercial.</span></li>
+                <li><span class="icon">✓</span><span>Pós-graduações em Gestão Hospitalar e Marketing Digital.</span></li>
+                <li><span class="icon">✓</span><span>Conselheira Consultiva.</span></li>
+              </ul>
+              <p style="font-size:0.82rem;color:var(--muted);">
+                Trago a visão de quem vive a realidade da empresa brasileira, com suas dores de
+                crescimento, sucessão e profissionalização da gestão.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER DETAIL -->
+    <section id="como-contratar">
+      <div class="section__inner">
+        <div class="section__badge">
+          Estrutura da mentoria
+        </div>
+        <h2 class="section__title">Um caminho claro: diagnóstico, ação e acompanhamento.</h2>
+        <p class="section__subtitle">
+          O objetivo é sair da confusão para a clareza. Você não precisa de mais tarefas,
+          e sim de foco no que realmente muda o resultado da empresa.
+        </p>
+
+        <div class="offer-grid">
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:0.5rem;">Etapas da jornada</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <strong>1. Diagnóstico estratégico</strong>
+                <span>Levantamento da situação atual: números, estrutura, riscos e oportunidades.
+                  Definição dos principais temas da mentoria.</span>
+              </div>
+              <div class="timeline-item">
+                <strong>2. Desenho da agenda de gestão</strong>
+                <span>Definimos o que o dono precisa olhar, com que frequência e em qual formato
+                  (relatórios, dashboards, reuniões).</span>
+              </div>
+              <div class="timeline-item">
+                <strong>3. Execução assistida</strong>
+                <span>Acompanhamento das ações definidas, apoio nas decisões e ajustes conforme
+                  os resultados aparecem.</span>
+              </div>
+              <div class="timeline-item">
+                <strong>4. Consolidação</strong>
+                <span>Revisão de indicadores, riscos e próximos passos para manter a gestão viva
+                  após o fim do ciclo de mentoria.</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:0.5rem;">O que está incluído</h3>
+            <div class="offer-highlights">
+              <div class="offer-row">
+                <div class="offer-icon">📊</div>
+                <div>
+                  <strong>Encontros online 1:1</strong>
+                  <div>Reuniões quinzenais, com pauta definida e foco em decisão, não em teoria.</div>
+                </div>
+              </div>
+              <div class="offer-row">
+                <div class="offer-icon">📁</div>
+                <div>
+                  <strong>Materiais prontos para uso</strong>
+                  <div>Planilhas, checklists, modelos de indicadores e roteiros de reuniões.</div>
+                </div>
+              </div>
+              <div class="offer-row">
+                <div class="offer-icon">📞</div>
+                <div>
+                  <strong>Suporte entre encontros</strong>
+                  <div>Canal direto para dúvidas pontuais e validação de decisões importantes.</div>
+                </div>
+              </div>
+              <div class="offer-row">
+                <div class="offer-icon">🧭</div>
+                <div>
+                  <strong>Foco em resultado e legado</strong>
+                  <div>Decisões alinhadas a crescimento, continuidade do negócio e governança.</div>
+                </div>
+              </div>
+              <button class="btn btn--primary" style="margin-top:0.3rem;" onclick="scrollToSection('contato')">
+                Quero falar sobre valores e disponibilidade
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA + FORM -->
+    <section class="cta-section" id="contato">
+      <div class="section__inner">
+        <div class="section__badge">
+          Próximo passo
+        </div>
+
+        <div class="cta-grid">
+          <div class="cta-highlight">
+            <h2 class="section__title" style="margin-bottom:0.7rem;">Vamos conversar sobre o seu negócio.</h2>
+            <p>
+              O primeiro passo é uma conversa rápida para entender o momento da sua empresa
+              e ver se a mentoria é adequada para você.
+            </p>
+            <ul>
+              <li>Reunião inicial online de até 30 minutos.</li>
+              <li>Sem compromisso de contratação.</li>
+              <li>Foco em entender necessidades e expectativas.</li>
+            </ul>
+            <p style="margin-top:0.9rem;font-size:0.88rem;">
+              Preencha o formulário ao lado ou fale diretamente pelo WhatsApp. Retorno em até
+              1 dia útil.
+            </p>
+          </div>
+
+          <form class="form-card" onsubmit="event.preventDefault(); alert('Formulário enviado. Personalize a ação no seu backend.');">
+            <h3 style="font-size:1rem;">Preencha para receber os detalhes da mentoria</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input class="input" type="text" id="nome" name="nome" placeholder="Seu nome" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input class="input" type="email" id="email" name="email" placeholder="seuemail@empresa.com" required>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="whatsapp">WhatsApp</label>
+                <input class="input" type="text" id="whatsapp" name="whatsapp" placeholder="(DD) 9 0000-0000">
+              </div>
+              <div class="form-group">
+                <label for="porte">Porte da empresa</label>
+                <select class="input" id="porte" name="porte">
+                  <option value="">Selecione</option>
+                  <option>Faturamento até R$ 500 mil/ano</option>
+                  <option>R$ 500 mil a R$ 5 milhões/ano</option>
+                  <option>R$ 5 milhões a R$ 30 milhões/ano</option>
+                  <option>Acima de R$ 30 milhões/ano</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="desafio">Qual o principal desafio da sua gestão hoje?</label>
+              <textarea class="input" id="desafio" name="desafio" placeholder="Ex.: falta de clareza nos números, organização do time, sucessão, etc."></textarea>
+            </div>
+
+            <button class="btn btn--primary" type="submit">
+              Enviar e receber proposta da mentoria
+            </button>
+
+            <p class="form-footnote">
+              Seus dados serão usados apenas para contato sobre a mentoria. Você pode solicitar remoção a qualquer momento.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Mentoria Estratégica de Negócios • Marlusa M. Pires</div>
+      <div class="footer-right">
+        <div class="footer-contact">
+          <a href="mailto:marlusa100@gmail.com">marlusa100@gmail.com</a>
+          <span>|</span>
+          <a href="tel:+5567984074337">+55 67 9 8407-4337</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <div class="whatsapp-float">
+    <!-- Ajustar link com seu número -->
+    <a href="https://wa.me/5567984074337?text=Oi,%20Marlusa!%20Quero%20saber%20mais%20sobre%20a%20mentoria%20estrat%C3%A9gica." target="_blank" rel="noopener">
+      ☏
+    </a>
+  </div>
+
+</div>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('topNav');
+    nav.classList.toggle('nav--open');
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
