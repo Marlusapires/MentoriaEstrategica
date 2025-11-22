@@ -628,6 +628,41 @@
     .stat strong { font-size: 1rem; }
     .stat span { color: var(--muted); font-size: 0.78rem; }
 
+    /* TALKS */
+
+    .talks-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .talks-photos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .talk-card {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      background: #020617;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .talk-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .talk-tagline {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-top: 0.9rem;
+    }
+
     /* OFFER */
 
     .offer-grid {
@@ -804,6 +839,7 @@
       .who-grid,
       .testimonials-grid,
       .about-grid,
+      .talks-grid,
       .offer-grid,
       .cta-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -811,6 +847,7 @@
 
       .testimonials-grid { grid-template-columns: minmax(0, 1fr); }
       .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .talks-photos { grid-template-columns: minmax(0, 1fr); }
 
       .cta-section { padding-bottom: 3.5rem; }
     }
@@ -846,6 +883,7 @@
         <a href="#para-quem">Para quem é</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#sobre">Sobre</a>
+        <a href="#palestras">Palestras</a>
       </div>
 
       <div class="nav__cta">
@@ -931,8 +969,8 @@
           <div class="hero__profile">
             <div class="hero__avatar-wrap">
               <div class="hero__avatar-inner">
-                <!-- TROCAR ESTE SRC PELA SUA IMAGEM, EX.: ./img/marlusa.png -->
-                <img src="/mnt/data/513cd60c-64ad-4b94-af9b-73f5a1924e5d.png" alt="Foto de Marlusa M. Pires">
+                <!-- troque o caminho se usar outro nome de arquivo -->
+                <img src="WhatsApp Image 2025-11-22 at 07.48.23.jpeg" alt="Foto de Marlusa M. Pires">
               </div>
               <div class="hero__badge">
                 <span class="hero__badge-dot"></span>
@@ -1259,6 +1297,44 @@
       </div>
     </section>
 
+    <!-- TALKS / EVENTS -->
+    <section id="palestras">
+      <div class="section__inner">
+        <div class="section__badge">
+          Palestras &amp; eventos
+        </div>
+        <div class="talks-grid">
+          <div>
+            <h2 class="section__title">Participações em eventos e palcos estratégicos.</h2>
+            <p class="section__subtitle">
+              Além da mentoria individual, atuo como palestrante em eventos voltados a gestão,
+              estratégia e resultados em negócios – com foco em empresários que querem profissionalizar
+              suas empresas sem perder a essência.
+            </p>
+            <p class="talk-tagline">
+              Tem interesse em levar uma palestra sobre gestão, governança ou mentoria estratégica
+              para o seu evento, convenção de vendas ou encontro de empresários?
+            </p>
+            <button class="btn btn--primary"
+                    type="button"
+                    style="margin-top:1rem;"
+                    onclick="openWhatsApp('LDP MENTORIA - Sessão PALESTRAS: Quero informações de palestra/evento')">
+              Quero falar sobre palestra ou evento
+            </button>
+          </div>
+
+          <div class="talks-photos">
+            <div class="talk-card">
+              <img src="WhatsApp Image 2025-11-22 at 07.48.23.jpeg" alt="Marlusa palestrando no Pro Clinic Summit 2025">
+            </div>
+            <div class="talk-card">
+              <img src="WhatsApp Image 2025-11-22 at 07.48.30.jpeg" alt="Marlusa apresentando conteúdo no Pro Clinic Summit 2025">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- OFFER DETAIL -->
     <section id="como-contratar">
       <div class="section__inner">
@@ -1361,8 +1437,8 @@
               <li>Foco em entender necessidades e expectativas.</li>
             </ul>
             <p style="margin-top:0.9rem;font-size:0.88rem;">
-              Preencha o formulário ao lado ou fale diretamente pelo WhatsApp. Retorno em até
-              1 dia útil.
+              Você pode preencher o formulário ao lado e, em seguida, clicar no botão de WhatsApp
+              para me avisar que preencheu – retorno em até 1 dia útil.
             </p>
           </div>
 
@@ -1449,7 +1525,8 @@
     const base = 'https://wa.me/5567984074337?text=';
     const msg = source + ' - Olá, Marlusa! Gostaria de saber mais sobre a mentoria estratégica de negócios.';
     const url = base + encodeURIComponent(msg);
-    window.open(url, '_blank');
+    // abre no mesmo aba para evitar bloqueio de pop-up
+    window.location.href = url;
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
